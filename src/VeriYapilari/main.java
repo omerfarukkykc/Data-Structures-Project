@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.lang.management.ManagementFactory;
 import java.lang.management.MemoryMXBean;
 import java.lang.management.MemoryUsage;
-import java.util.Scanner;
 
 public class main {
 
@@ -24,56 +23,75 @@ public class main {
            
             
             System.err.println( i + " Adet Karışık Eleman için Sıralama Zamanı");
+            
+            System.gc();
             Runtime.getRuntime().gc();
             long start =  getUsedMemory();
             IS.start();
             System.out.println("[ Insertion Short = "+IS.getShortTime()+" MS ::: Used Memory ="+formatSize(getUsedMemory()-start)+" ]\t");
+            
+            System.gc();
             Runtime.getRuntime().gc();
             start =  getUsedMemory();
             HS.start();
             System.out.println("[ Heap Short = "+HS.getShortTime()+" MS ::: Used Memory ="+formatSize(getUsedMemory()-start)+" ]\t");
+            
+            System.gc();
             Runtime.getRuntime().gc();
             start =  getUsedMemory();
             CS.start();
             System.out.println("[ Counting Short = "+CS.shorTime+" MS ::: Used Memory ="+formatSize(getUsedMemory()-start)+" ]\t");
-            Runtime.getRuntime().gc();
+            
             
             
             CS.kucuktenbuyugeAta();
             
             
             System.err.println( i + " Adet Küçükten Büyüğe Eleman için Sıralama Zamanı");
+            
+            System.gc();
             Runtime.getRuntime().gc();
             start =  getUsedMemory();
             IS.start();
             System.out.println("[ Insertion Short = "+IS.getShortTime()+" MS ::: Used Memory ="+formatSize(getUsedMemory()-start)+" ]\t");
+            
+            System.gc();
             Runtime.getRuntime().gc();
             start =  getUsedMemory();
             HS.start();
             System.out.println("[ Heap Short = "+HS.getShortTime()+" MS ::: Used Memory ="+formatSize(getUsedMemory()-start)+" ]\t");
+            
+            System.gc();
             Runtime.getRuntime().gc();
             start =  getUsedMemory();
             CS.start();
             System.out.println("[ Counting Short = "+CS.shorTime+" MS ::: Used Memory ="+formatSize(getUsedMemory()-start)+" ]\t");
-            Runtime.getRuntime().gc();
+            
             
             
             CS.buyuktenkucugeAta();
             
             System.err.println( i + " Adet Büyükten Küçüğe Eleman için Sıralama Zamanı");
+            
+            System.gc();
             Runtime.getRuntime().gc();
             start =  getUsedMemory();
             IS.start();
             System.out.println("[ Insertion Short = "+IS.getShortTime()+" MS ::: Used Memory ="+formatSize(getUsedMemory()-start)+" ]\t");
+            
+            System.gc();
             Runtime.getRuntime().gc();
             start =  getUsedMemory();
             HS.start();
             System.out.println("[ Heap Short = "+HS.getShortTime()+" MS ::: Used Memory ="+formatSize(getUsedMemory()-start)+" ]\t");
+            
+            System.gc();
             Runtime.getRuntime().gc();
             start =  getUsedMemory();
             CS.start();
             System.out.println("[ Counting Short = "+CS.shorTime+" MS ::: Used Memory ="+formatSize(getUsedMemory()-start)+" ]\t");
-            Runtime.getRuntime().gc();
+            
+            
             System.out.println("----------------------------------------------------------------------------");
         }
         public static long getUsedMemory(){
