@@ -33,7 +33,7 @@ public class Shorter {
             random =new Random();
             arr = new int [i];
             for (int j = 0; j < arr.length; j++) {
-               arr[j] = random.nextInt(i);
+               arr[j] = random.nextInt(10000000);
             }
         }
         public float getUsedHeap(){
